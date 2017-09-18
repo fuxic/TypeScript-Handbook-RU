@@ -471,7 +471,7 @@ square.sideLength = 10;
 square.penWidth = 5.0;
 ```
 
-# Гибридные типы
+# Смешанные типы
 
 Как говорилось ранее, интерфейсы способны описывать сложные типы, которые встречаются в "боевом" JavaScript.
 JavaScript — динамичный и гибкий язык, поэтому здесь можно внезапно столкнуться с объектами, которые работают как сочетание нескольких уже описанных типов.
@@ -520,7 +520,7 @@ interface SelectableControl extends Control {
     select(): void;
 }
 
-class Button extends Control {
+class Button extends Control implements SelectableControl{
     select() { }
 }
 
@@ -528,7 +528,7 @@ class TextBox extends Control {
     select() { }
 }
 
-class Image extends Control {
+class Image extends Control implements SelectableControl{
 }
 
 class Location {
